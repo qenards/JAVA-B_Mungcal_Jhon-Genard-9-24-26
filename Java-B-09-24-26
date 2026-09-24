@@ -1,1 +1,132 @@
+import math
 
+print("Algebra Calculus 1")
+
+print("""
+
+1. Solve the linear equation (ax + b = c)
+
+2. Solve the quadratic equation (ax^2 + bx + c = 0)
+
+3. evaluate f(x) = ax^2 + bx + c
+
+4. Find the derivative f'(x) at a point
+
+5. Estimate a limit as a x approaches a value
+
+6. Compute a definite integral of f(x)
+
+7. quit
+
+""")
+
+choice = input("Enter a number: ").strip()
+
+if choice == "1":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    print("x =", (c - b) / a)
+
+elif choice == "2":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    discriminant = (b**2) - (4 * a * c)
+
+    if discriminant > 0:
+
+        root1 = (-b + math.sqrt(discriminant)) / (2 * a)
+
+        root2 = (-b - math.sqrt(discriminant)) / (2 * a)
+
+        print(f"Roots: x1 = {root1}, x2 = {root2}")
+
+    elif discriminant == 0:
+
+        root = -b / (2 * a)
+
+        print(f"One root: x = {root}")
+
+    else:
+
+        print("No real solutions (Complex/Imaginary roots).")
+
+elif choice == "3":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    x = int(input("Enter the Value of X: "))
+
+    result = a * (x**2) + b * x + c
+
+    print(f"f({x}) = {result}")
+
+elif choice == "4":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    x = float(input("Find derivative at point x = "))
+
+    derivative = 2 * a * x + b
+
+    print(f"f'({x}) = {derivative}")
+
+elif choice == "5":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    target = float(input("Limit as x approaches = "))
+
+    limit = a * (target**2) + b * target + c
+
+    print(f"lim x->{target} f(x) = {limit}")
+
+elif choice == "6":
+
+    a = int(input("Enter the Value of A: "))
+
+    b = int(input("Enter the Value of B: "))
+
+    c = int(input("Enter the Value of C: "))
+
+    lower = float(input("Enter lower bound: "))
+
+    upper = float(input("Enter upper bound: "))
+
+    def F(x):
+
+        return (a / 3) * (x**3) + (b / 2) * (x**2) + c * x
+
+    integral_value = F(upper) - F(lower)
+
+    print(f"Definite Integral = {integral_value}")
+
+elif choice == "7":
+
+    print("Goodbye!")
+
+else:
+
+    print("Invalid Input. Please choose from 1 to 7.")
+ 
