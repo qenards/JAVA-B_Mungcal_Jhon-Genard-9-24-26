@@ -1,132 +1,241 @@
-import math
-
-print("Algebra Calculus 1")
-
-print("""
-
-1. Solve the linear equation (ax + b = c)
-
-2. Solve the quadratic equation (ax^2 + bx + c = 0)
-
-3. evaluate f(x) = ax^2 + bx + c
-
-4. Find the derivative f'(x) at a point
-
-5. Estimate a limit as a x approaches a value
-
-6. Compute a definite integral of f(x)
-
-7. quit
-
-""")
-
-choice = input("Enter a number: ").strip()
-
-if choice == "1":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    print("x =", (c - b) / a)
-
-elif choice == "2":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    discriminant = (b**2) - (4 * a * c)
-
-    if discriminant > 0:
-
-        root1 = (-b + math.sqrt(discriminant)) / (2 * a)
-
-        root2 = (-b - math.sqrt(discriminant)) / (2 * a)
-
-        print(f"Roots: x1 = {root1}, x2 = {root2}")
-
-    elif discriminant == 0:
-
-        root = -b / (2 * a)
-
-        print(f"One root: x = {root}")
-
-    else:
-
-        print("No real solutions (Complex/Imaginary roots).")
-
-elif choice == "3":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    x = int(input("Enter the Value of X: "))
-
-    result = a * (x**2) + b * x + c
-
-    print(f"f({x}) = {result}")
-
-elif choice == "4":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    x = float(input("Find derivative at point x = "))
-
-    derivative = 2 * a * x + b
-
-    print(f"f'({x}) = {derivative}")
-
-elif choice == "5":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    target = float(input("Limit as x approaches = "))
-
-    limit = a * (target**2) + b * target + c
-
-    print(f"lim x->{target} f(x) = {limit}")
-
-elif choice == "6":
-
-    a = int(input("Enter the Value of A: "))
-
-    b = int(input("Enter the Value of B: "))
-
-    c = int(input("Enter the Value of C: "))
-
-    lower = float(input("Enter lower bound: "))
-
-    upper = float(input("Enter upper bound: "))
-
-    def F(x):
-
-        return (a / 3) * (x**3) + (b / 2) * (x**2) + c * x
-
-    integral_value = F(upper) - F(lower)
-
-    print(f"Definite Integral = {integral_value}")
-
-elif choice == "7":
-
-    print("Goodbye!")
-
-else:
-
-    print("Invalid Input. Please choose from 1 to 7.")
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hello, World");
+
+        // DATA TYPES 
+        // int - whole number 
+        // double - double precision of decimal number 
+        // float - single precision of decimal number 'f' 
+        // char - a single character of text (single quotes) 
+        // String - not primitive text (double quotes)
+        // boolean - true or false (primitive type is lowercase 'boolean') 
+
+        // Declaring variables of different data types 
+        int age = 20; 
+        double weight = 20.30; 
+        float deep = 70.6f; 
+        char grade = 'A'; 
+        String name = "Genard"; 
+        boolean isStudent = true; 
+
+        
+        System.out.println("Age: " + age); 
+        System.out.println("Weight: " + weight); 
+        System.out.println("Deep: " + deep); 
+        System.out.println("Grade: " + grade); 
+        System.out.println("Name: " + name); 
+        System.out.println("Am I beautiful: " + isStudent); 
+    
  
+        // Getting input using Scanner
+
+        System.out.println("Enter your address:");
+        String userAddress = scanner.next();// read one words
+        System.out.println("Where is your address? " + userAddress);
+
+        // Reading the full line (including spaces)
+        scanner.nextLine();// clears leftover newline from previous next()
+        System.out.println("Enter a sentence about yourself:");
+        String fullSentence = scanner.nextLine();//reads the entire line or paragraph
+        System.out.println("You said: " + fullSentence);
+       
+
+        // operator and expression
+        // =,-,*,&&, ||, >,<, <=,>=,!=
+        int a = 10, b = 3;
+        System.out.println("a + b = " + (a+b)); 
+        System.out.println("a - b = " + (a-b));
+        System.out.println("a * b = " + (a*b)); 
+        System.out.println("a / b = " + (a/b)); 
+        System.out.println("a % b = " + (a%b)); 
+
+        double x = 10, y = 3;
+        System.out.println("x / y " + (x/y)); 
+
+        // Relational Operator (returm bool: 1 or 0)
+        System.out.println("a == b = " + (a==b)); 
+        System.out.println("a != b = " + (a!=b));
+        System.out.println("a <= b = " + (a<=b)); 
+        System.out.println("a >= b = " + (a>=b)); 
+        System.out.println("a > b = " + (a>b)); 
+        System.out.println("a < b = " + (a<b)); 
+
+        // Logical Operators
+        boolean p = true, q = false;
+        System.out.println("p && q = " + (p&&q)); // And
+        System.out.println("p || q = " + (p||q));  // Or
+        System.out.println("!p " + (!p)); // Not
+        System.out.println("!q " + (!q)); //Not
+
+        // assignment operator 
+        // +=, -=, *=, /=, 
+        int score = 50; 
+        score += 10; 
+        System.out.println("Score after += " + score); 
+
+        score *= 2; 
+        System.out.println("Score after *= " + score);
+
+        // Increment / Decrement Operators
+        int counter = 5;
+        System.out.println("Counter ++ (post): "+ counter++);
+        System.out.println("Counter  now ++ "+ counter++);
+        System.out.println("++Counter(pre): "+ ++counter);
+
+        //Control Flow ( if, else, switch case, loop (for, while, do while))
+        System.out.println("Enter your exam:");
+        int Examscore = scanner.nextInt();
+
+        if (Examscore >= 90) {
+            System.out.println("Grade: Magaling");
+        }
+        else if (Examscore >= 80 ) {
+            System.out.println("Grade: Chamba");
+        }
+        else if (Examscore >= 70 ) {
+            System.out.println("Grade: Malangis");
+        }
+        else {
+            System.out.println("Grade: Mabaling");
+        }
+
+        // Switch Case Statement 
+        System.out.print("Enter a day number (1-7)"); 
+        int day = scanner.nextInt(); 
+        switch (day) { 
+            case 1: System.out.println("Monday"); break; 
+            case 2: System.out.println("Tuesday"); break; 
+            case 3: System.out.println("Wednesday"); break; 
+            case 4: System.out.println("Thursday"); break; 
+            case 5: System.out.println("Friday"); break; 
+            case 6: System.out.println("Saturday"); break; 
+            case 7: System.out.println("Sunday"); break; 
+            default: System.out.println("Invalid day"); break; 
+        } 
+
+        //loops (for, while, do while) 
+        System.out.println("Counting 1 to 5 with a for loop:"); 
+        for(int i = 1; i <= 5; i++){ 
+            System.out.print(i + ""); 
+        } 
+        System.out.println(); 
+
+        System.out.println("\nCounting down from 5 with a while loop:");
+        int n = 5;
+        while (n > 0) {
+            System.out.print(n + " ");
+            n--;
+        }
+        System.out.println(); 
+
+        // do while loops
+        System.out.println("do-while example:");
+        int doWhileX = 0;
+        do {
+            System.out.println("x=" + doWhileX);
+            doWhileX++;
+        } while (doWhileX < 3);
+
+        // break and continue
+        System.out.println("skipping 3 usinf continue, stopping at 7 using breaK:");
+        for(int i = 1; i <= 10; i++){
+            if (i == 3) continue;
+            if (i == 7) break;
+            System.out.println(i + "");
+        }
+        System.out.println();
+        
+        // calling functions 
+        int sum = add (5,7);
+        System.out.println("5 + 7 = " + sum);
+
+        // squareroot\
+        double sq = square (4.5);
+        System.out.println("4.5 square = "+ sq);
+
+        greet("Maria");
+
+        System.out.println("5! = " + factorial (5));
+
+        System.out.println("multiply(2,3)= "+ multiply(2, 3));
+        System.out.println("multiply(2.5,4.0)= "+ multiply(2.5,4.0));
+
+        System.out.println("power (5)="+power(5));
+        System.out.println("power (5,3)="+power(5,3));
+
+        
+    }
+
+    //Methods
+    //TAkes a double, return its square 
+    static double square(double n){
+        return n * n;
+    }
+    
+    //Takes two ints, returns their sum 
+    static int add(int a, int b){
+        return a + b;
+    }
+    
+    //void function: performs an action, return nothing 
+    static void greet(String name){
+        System.out.println("Hello," + name + " !Wlcome to JAva.");
+    }
+    
+    //Recursive function
+    static int factorial(int n){
+        if (n <= 1){
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    static int multiply(int a , int b){
+        return a * b;
+    }
+    
+    static double multiply(double a, double b){
+        return a * b;
+    }
+    
+    //power, exponent
+    static int power(int base, int exponent){
+        int result = 1;
+        for (int i = 0; i < exponent; i++){
+            result *= base;
+        }
+        return result;
+    }
+
+    // base
+static int power (int base){
+    return power (base,2);
+    }
+
+// calling functions 
+int sum = add (5,7);
+    System.out.println("5 + 7 = " + sum);
+
+// squareroot\
+double sq = square (4.5);
+System.out.println("4.5 square = "+ sq);
+
+greet("Maria");
+
+System.out.println("5! = " + factorial (5));
+
+System.out.println("multiply(2,3)= "+ multiply(2, 3));
+System.out.println("multiply(2.5,4.0)= "+ multiply(2.5,4.0));
+
+System.out.println("power (5)="+power(5));
+System.out.println("power (5,3)="+power(5,3));
+
+scanner.close();
+
+    }
+}
+
+   
