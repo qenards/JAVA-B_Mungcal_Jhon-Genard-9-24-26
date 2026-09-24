@@ -1,0 +1,173 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        // Switch Case Statement 
+        System.out.print("Enter a day number (1-7)"); 
+        int day = scanner.nextInt(); 
+        switch (day) { 
+            case 1: System.out.println("Monday"); break; 
+            case 2: System.out.println("Tuesday"); break; 
+            case 3: System.out.println("Wednesday"); break; 
+            case 4: System.out.println("Thursday"); break; 
+            case 5: System.out.println("Friday"); break; 
+            case 6: System.out.println("Saturday"); break; 
+            case 7: System.out.println("Sunday"); break; 
+            default: System.out.println("Invalid day"); break; 
+        } 
+
+        //loops (for, while, do while) 
+        System.out.println("Counting 1 to 5 with a for loop:"); 
+        for(int i = 1; i <= 5; i++){ 
+            System.out.print(i + ""); 
+        } 
+        System.out.println(); 
+
+        System.out.println("\nCounting down from 5 with a while loop:");
+        int n = 5;
+        while (n > 0) {
+            System.out.print(n + " ");
+            n--;
+        }
+        System.out.println(); 
+
+        // do while loops
+        System.out.println("do-while example:");
+        int doWhileX = 0;
+        do {
+            System.out.println("x=" + doWhileX);
+            doWhileX++;
+        } while (doWhileX < 3);
+
+        // break and continue
+        System.out.println("skipping 3 usinf continue, stopping at 7 using breaK:");
+        for(int i = 1; i <= 10; i++){
+            if (i == 3) continue;
+            if (i == 7) break;
+            System.out.println(i + "");
+        }
+        System.out.println();
+        
+        // calling functions 
+        int sum = add (5,7);
+        System.out.println("5 + 7 = " + sum);
+
+        // squareroot\
+        double sq = square (4.5);
+        System.out.println("4.5 square = "+ sq);
+
+        greet("Maria");
+
+        System.out.println("5! = " + factorial (5));
+
+        System.out.println("multiply(2,3)= "+ multiply(2, 3));
+        System.out.println("multiply(2.5,4.0)= "+ multiply(2.5,4.0));
+
+        System.out.println("power (5)="+power(5));
+        System.out.println("power (5,3)="+power(5,3));
+
+        
+    }
+
+    //Methods
+    //TAkes a double, return its square 
+    static double square(double n){
+        return n * n;
+    }
+    
+    //Takes two ints, returns their sum 
+    static int add(int a, int b){
+        return a + b;
+    }
+    
+    //void function: performs an action, return nothing 
+    static void greet(String name){
+        System.out.println("Hello," + name + " !Wlcome to JAva.");
+    }
+    
+    //Recursive function
+    static int factorial(int n){
+        if (n <= 1){
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    static int multiply(int a , int b){
+        return a * b;
+    }
+    
+    static double multiply(double a, double b){
+        return a * b;
+    }
+    
+    //power, exponent
+    static int power(int base, int exponent){
+        int result = 1;
+        for (int i = 0; i < exponent; i++){
+            result *= base;
+        }
+        return result;
+    }
+
+    // base
+static int power (int base){
+    return power (base,2);
+    }
+
+// calling functions 
+int sum = add (5,7);
+    System.out.println("5 + 7 = " + sum);
+
+// squareroot\
+double sq = square (4.5);
+System.out.println("4.5 square = "+ sq);
+
+greet("Maria");
+
+System.out.println("5! = " + factorial (5));
+
+System.out.println("multiply(2,3)= "+ multiply(2, 3));
+System.out.println("multiply(2.5,4.0)= "+ multiply(2.5,4.0));
+
+System.out.println("power (5)="+power(5));
+System.out.println("power (5,3)="+power(5,3));
+
+scanner.close();
+
+    }
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What's your name?");
+        String name = scanner.nextLine();
+        System.out.println("What is your age?");
+        int age = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("n------- INTRO CARD------");
+        System.out.println("Name:" + name);
+        System.out.println("Age:" + age);
+        System.out.println("In 5 years, " + name + " will be " +(age +5) + " years old.");
+    }}
+
+
+
+
+
+
+
+   
